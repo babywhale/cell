@@ -1,0 +1,253 @@
+@import 'dep/icomoon/0.0.3/style.styl'
+
+$cell-need-thinner-border = true
+
+$cell-margin-vertical = 5px
+$cell-padding-vertical = 10px
+$cell-padding-horizontal = 15px
+$cell-color = #FFEB21
+$cell-height = 44px
+$cell-font-size = 16px
+
+$cell-border-color = #D9D9D9
+$cell-active-bg-color = #ECECEC
+
+$cell-title-color = #999
+$cell-title-font-size = 16px
+$cell-title-padding-top = 10px
+$cell-title-padding-bottom = 5px
+
+$cell-icon-gap = 5px
+$cell-icon-size = 24px
+
+$cell-label-color = #2932E1
+$cell-label-font-size = 16px
+$cell-label-width = 150px
+
+$cell-star-color = #F00
+$cell-star-gap = 4px
+
+$cell-form-color = #078FFF
+$cell-form-font-size = 16px
+
+$cell-arrow-color = #C8C8CD
+$cell-arrow-gap = 10px
+$cell-arrow-size = 6px
+$cell-arrow-thickness = 2px
+
+$cell-addon-color = #E75075
+$cell-addon-font-size = 16px
+$cell-addon-gap = 5px
+
+$cell-radio-color = #09BB07
+$cell-radio-size = 16px
+
+$cell-checkbox-color = #ccc
+$cell-checkbox-checked-color = #09BB07
+$cell-checkbox-gap = 20px
+$cell-checkbox-size = 16px
+
+$cell-counter-color = #C8C8CD
+$cell-counter-font-size = 16px
+$cell-counter-padding-top = 10px
+
+$cell-icon-class = '.icon'
+
+.cells-title
+    margin $cell-title-padding-top $cell-padding-horizontal $cell-title-padding-bottom
+    color $cell-title-color
+    font-size $cell-title-font-size
+
+.cells
+    margin $cell-margin-vertical 0
+    background-color #FFF
+    color $cell-color
+    font-size $cell-font-size
+    position relative
+
+.cells:before,
+.cells:after,
+.cell:before
+    content ""
+    position absolute
+    left 0
+    right 0
+    height 1px
+    background-color $cell-border-color
+    if $cell-need-thinner-border
+        transform scaleY(0.5)
+
+.cells:before
+    top 0
+
+.cells:after
+    bottom 0
+
+.cell
+    &:before
+        top 0
+        left $cell-padding-horizontal
+
+    &:first-child:before
+        display none
+
+    padding $cell-padding-vertical $cell-padding-horizontal
+    position relative
+    display flex
+    align-items center
+
+    .cell-icon
+        width $cell-icon-size
+        height $cell-icon-size
+        display block
+        margin-right $cell-icon-gap
+
+        > img
+            width 100%
+            height 100%
+
+        img&,
+        > img
+            -webkit-touch-callout none
+
+    .cell-label
+        width $cell-label-width
+        position relative
+        -webkit-user-select none
+        font-size $cell-label-font-size
+        color $cell-label-color
+
+        &.required:after
+            content "*"
+            color $cell-star-color
+            position absolute
+            top 50%
+            transform translateY(-25%)
+            margin-left $cell-star-gap
+
+    .cell-flex,
+    .cell-textarea
+        flex 1
+
+    input,
+    select,
+    textarea
+        margin 0
+        padding 0
+        border-color rgba(0,0,0,0)
+        outline 0
+        height 100%
+        width 100%
+        font-size inherit
+        background-color transparent
+        -webkit-appearance none
+        -webkit-tap-highlight-color transparent
+
+    input[type="radio"],
+    input[type="checkbox"]
+        width inherit
+
+    .cell-flex
+        height $cell-height - 2 * $cell-padding-vertical
+        line-height $cell-height - 2 * $cell-padding-vertical
+        text-align right
+
+        input,
+        select
+            text-align right
+            font-size $cell-form-font-size
+            color $cell-form-color
+
+        select
+            direction rtl
+
+        &.left
+            text-align left
+
+            input
+                text-align left
+            select
+                text-align left
+                direction ltr
+
+        &.entered
+            margin-right $cell-arrow-gap + 0.707 * $cell-arrow-size
+
+            &:after
+                content ""
+                display inline-block
+                width $cell-arrow-size
+                height $cell-arrow-size
+                border $cell-arrow-thickness solid $cell-arrow-color
+                border-left 0
+                border-bottom 0
+                transform rotate(45deg) translateY(-50%)
+                position absolute
+                right $cell-padding-horizontal + 0.707 * $cell-arrow-size
+                top 50%
+
+    .cell-textarea
+        textarea
+            resize none
+
+        .cell-counter
+            text-align right
+            color $cell-counter-color
+            font-size $cell-counter-font-size
+            padding-top $cell-counter-padding-top
+
+    .cell-addon
+        margin-left $cell-addon-gap
+        font-size $cell-addon-font-size
+        color $cell-addon-color
+
+a.cell
+    text-decoration none
+    -webkit-touch-callout none
+
+a.cell,
+label.cell-radio,
+label.cell-checkbox
+    -webkit-tap-highlight-color rgba(0,0,0,0)
+    transition 0.2s background-color
+    &:active
+        background-color $cell-active-bg-color
+
+.cell-radio input[type="radio"]
+    display none
+
+    + {$cell-icon-class}
+        display none
+        font-size $cell-radio-size
+        color $cell-radio-color
+
+    &:checked + {$cell-icon-class}
+        display inline-block
+
+.cell-checkbox input[type="checkbox"]
+    display none
+
+    + {$cell-icon-class}
+        font-size $cell-checkbox-size
+        color $cell-checkbox-color
+        line-height $cell-icon-size
+
+        + {$cell-icon-class}
+            display none
+            font-size $cell-checkbox-size
+            color $cell-checkbox-checked-color
+            line-height $cell-icon-size
+
+    &:checked + {$cell-icon-class}
+        display none
+        + {$cell-icon-class}
+            display inline-block
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>cell</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #f6f6f6
+        }
+    </style>
+    <link rel="stylesheet" href="../src/mobile/celltest/cell.styl">
+</head>
+<body>
+
+    <div class="cells-title">
+        标题
+    </div>
+    <div class="cells">
+        <div class="cell">
+            <div class="cell-icon">
+                <img src="http://img3.imgtn.bdimg.com/it/u=2911503546,1522753519&fm=206&gp=0.jpg">
+            </div>
+            <div class="cell-label">
+                label
+            </div>
+            <div class="cell-flex">
+                text
+            </div>
+        </div>
+    </div>
+
+
+    <div class="cells-title">
+        标题
+    </div>
+    <div class="cells">
+        <div class="cell">
+            <div class="cell-label required">
+                label
+            </div>
+            <div class="cell-flex entered left">
+                <input type="date" value="2016-08-01">
+            </div>
+        </div>
+        <div class="cell">
+            <div class="cell-label required">
+                label
+            </div>
+            <div class="cell-flex entered left">
+                <select>
+                    <option>aaa</option>
+                    <option>bbb</option>
+                </select>
+            </div>
+
+        </div>
+        <div class="cell">
+            <div class="cell-label required">
+                label
+            </div>
+            <div class="cell-flex left">
+                <input type="text" placeholder="请输入内容">
+            </div>
+        </div>
+        <div class="cell">
+            <div class="cell-label required">
+                label
+            </div>
+            <div class="cell-flex left">
+                <input type="number" placeholder="请输入金额">
+            </div>
+            <div class="cell-addon">
+                元
+            </div>
+        </div>
+    </div>
+
+
+    <div class="cells-title">
+        标题
+    </div>
+    <div class="cells">
+        <a class="cell">
+            <div class="cell-label required">
+                label
+            </div>
+            <div class="cell-flex entered">
+                check
+            </div>
+
+        </a>
+        <a class="cell">
+            <div class="cell-icon">
+                <img src="http://img3.imgtn.bdimg.com/it/u=2911503546,1522753519&fm=206&gp=0.jpg">
+            </div>
+            <div class="cell-label required">
+                label
+            </div>
+            <div class="cell-flex entered">
+                check
+            </div>
+        </a>
+    </div>
+
+
+    <div class="cells-title">
+        标题
+    </div>
+    <div class="cells">
+        <label class="cell cell-radio" for="r11">
+
+            <div class="cell-flex left">
+                单选
+
+            </div>
+            <input type="radio" name="radio1" value="0" checked="checked" id="r11">
+            <i class="icon icon-check"></i>
+        </label>
+        <label class="cell cell-radio" for="r12">
+
+            <div class="cell-flex left">
+                单选
+
+            </div>
+            <input type="radio" name="radio1" value="1" id="r12">
+            <i class="icon icon-check"></i>
+        </label>
+    </div>
+
+
+    <div class="cells-title">
+        标题
+    </div>
+    <div class="cells">
+        <label class="cell cell-checkbox" for="c11">
+            <div class="cell-icon">
+                <input type="checkbox" name="checkbox1" value="0" checked="checked" id="c11">
+                <i class="icon icon-check-o"></i>
+                <i class="icon icon-check-circle"></i>
+            </div>
+
+            <div class="cell-flex left">
+               多选
+            </div>
+
+        </label>
+        <label class="cell cell-checkbox" for="c12">
+            <div class="cell-icon">
+                <input type="checkbox" name="checkbox1" value="1" id="c12">
+                <i class="icon icon-check-o"></i>
+                <i class="icon icon-check-circle"></i>
+            </div>
+
+            <div class="cell-flex left">
+                多选
+            </div>
+
+        </label>
+    </div>
+
+
+    <div class="cells-title">
+        标题
+    </div>
+    <div class="cells">
+        <div class="cell">
+            <div class="cell-textarea">
+                <textarea rows="3" placeholder="请输入备注"></textarea>
+                <div class="cell-counter">
+                    0/200
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
