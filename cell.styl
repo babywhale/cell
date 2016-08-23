@@ -22,7 +22,7 @@ $cell-icon-size = 24px
 
 $cell-label-color = #2932E1
 $cell-label-font-size = 16px
-$cell-label-width = 150px
+$cell-label-width = 100px
 
 $cell-star-color = #F00
 $cell-star-gap = 4px
@@ -95,6 +95,7 @@ $cell-icon-class = '.icon'
     position relative
     display flex
     align-items center
+    line-height $cell-height - 2 * $cell-padding-vertical
 
     .cell-icon
         width $cell-icon-size
@@ -120,9 +121,10 @@ $cell-icon-class = '.icon'
         &.required:after
             content "*"
             color $cell-star-color
+            line-height $cell-label-font-size
             position absolute
             top 50%
-            transform translateY(-25%)
+            transform translateY(-50%)
             margin-left $cell-star-gap
 
     .cell-flex,
@@ -143,13 +145,14 @@ $cell-icon-class = '.icon'
         -webkit-appearance none
         -webkit-tap-highlight-color transparent
 
+    input
+        border 0
+
     input[type="radio"],
     input[type="checkbox"]
         width inherit
 
     .cell-flex
-        height $cell-height - 2 * $cell-padding-vertical
-        line-height $cell-height - 2 * $cell-padding-vertical
         text-align right
 
         input,
@@ -157,6 +160,7 @@ $cell-icon-class = '.icon'
             text-align right
             font-size $cell-form-font-size
             color $cell-form-color
+            vertical-align top
 
         select
             direction rtl
